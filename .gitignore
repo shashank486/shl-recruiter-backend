@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environment — never commit this
+venv/
+.venv/
+env/
+
+# Secrets — never commit
+.env
+
+# Cache files generated at runtime
+data/shl_catalog_embeddings.json
+data/analytics.json
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
