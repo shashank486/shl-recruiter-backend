@@ -42,6 +42,11 @@ def chat_endpoint(request: ChatRequest):
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"Internal Server Error: {str(e)}")
 
+# Alias: /chat → same handler (assignment requires POST /chat)
+@app.post("/chat", response_model=ChatResponse)
+def chat_endpoint_alias(request: ChatRequest):
+    return chat_endpoint(request)
+
 @app.get("/api/catalog")
 def get_catalog_endpoint(
     query: Optional[str] = None,
